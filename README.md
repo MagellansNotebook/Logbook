@@ -41,5 +41,9 @@ Select the new status of the message and press enter.
 
 ![edit_entry_change](https://user-images.githubusercontent.com/51066040/59158337-2e054600-8afc-11e9-8bf7-c8b9f52b2972.png)
 
+Once complete and successful a **System** message will above the logo.
+
+![edit_entry_complete](https://user-images.githubusercontent.com/51066040/59158377-d1eef180-8afc-11e9-8d3d-34af1244af56.png)
+
 
 
