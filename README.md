@@ -37,5 +37,9 @@ Once you press enter the program will display the message you wish to edit.
 
 ![edit_entry](https://user-images.githubusercontent.com/51066040/59158283-30b36b80-8afb-11e9-8a49-06f816a5e012.png)
 
+Select the new status of the message and press enter.
+
+![edit_entry_change](https://user-images.githubusercontent.com/51066040/59158337-2e054600-8afc-11e9-8bf7-c8b9f52b2972.png)
+
 
 
