@@ -66,7 +66,7 @@ def add_entry():
 	print(greeting.__doc__)
 	print(Style.BRIGHT+'[Menu]'+Style.RESET_ALL,'Add Entry')
 	print(Style.BRIGHT+Fore.YELLOW+'[Comment]'+Style.RESET_ALL+' Press [Enter] to save data or exit the main menu.')
-	print(Style.BRIGHT+Fore.RED+'[Warning]'+Style.RESET_ALL+' Do not press the down button. The current entry will be removed from the message log.')
+	print(Style.BRIGHT+Fore.RED+'[Warning]'+Style.RESET_ALL+' Do not press the up/down button. The current entry will be removed from the message log.')
 	print('Enter your message:\n')
 
 	data = sys.stdin.readline().strip()
