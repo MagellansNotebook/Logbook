@@ -125,7 +125,7 @@ def edit_entry():
 
 		cls()
 
-		view_entry(id_input)
+		query_id(id_input)
 		print(greeting.__doc__)
 		print(Style.BRIGHT+Fore.YELLOW+'[Comment]'+Style.RESET_ALL+' Status: [1] Open, [2] Close, [3] Info, [4] Exit to main menu')
 
