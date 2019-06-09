@@ -19,4 +19,7 @@ Press Enter to save the new message. The next option will asked you whether you 
 
 ![add_entry_save](https://user-images.githubusercontent.com/51066040/59158064-0b712e00-8af8-11e9-938d-b788ff843fc6.png)
 
+Once the message is saved the program will terminate back to the main menu. If it was saved corretly then a **System** comment will appear on top of the logo.
+
+![add_entry_save_complete](https://user-images.githubusercontent.com/51066040/59158146-67888200-8af9-11e9-89d5-5c46e6971beb.png)
 
