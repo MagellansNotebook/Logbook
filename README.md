@@ -1,5 +1,5 @@
 # Logbook
-Basic Logbook program using CLI.
+A simple python script used for logging entries. It is using peewee which is a small but powerful ORM. **Logbook** can be used for work or personal purposes. However, it has a limited text editing capability. **Logbook** is designed to capture text entries and saved it on its database (logbook.db). Each log entries are tag with serial number, status, and time stamp. These atributes are useful for searching and keeping track of task or messages saved in the database. Also, **Logbook** has the ability to save all entries into a text file for archiving purposes.
 
 Open the program using python 3.
 
@@ -71,7 +71,7 @@ Press **5** to delete a single entry. Similar to **Edit Entry** select the seria
 
 ![delete_entry](https://user-images.githubusercontent.com/51066040/59158727-f6010180-8b01-11e9-9a81-7c7a77f423d4.png)
 
-The program will prompt you whether you wish to continue or not. If you choose to continue the message will be deleted. The program will go back to the main menu with a **System** message. The **System** message will state the deletion of message was successful. 
+A **Warning** message will prompt you whether you wish to continue or not. If you choose to continue the message will be deleted. The program will go back to the main menu with a **System** message. The **System** message will state the deletion of message was successful. 
 
 ![delete_entry_value](https://user-images.githubusercontent.com/51066040/59158728-f8635b80-8b01-11e9-908d-b07bb0ba6bca.png)
 
@@ -89,7 +89,6 @@ The text file name is saved as a date time group. The file will be  at the same 
 
 Press **9** will delete all log entry.
 
+![warning](https://user-images.githubusercontent.com/51066040/59158810-90ae1000-8b03-11e9-9e8f-e638c2819e92.png)
 
-
-
-
+A **Warning** message will prompt you whether you wish to continue or not. If you continue, it will delete all entry and it will terminate back to the main menu. Otherwise, a **System** message will appear stating no messages was deleted.
