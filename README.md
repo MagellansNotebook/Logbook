@@ -27,7 +27,15 @@ Once the message is saved the program will terminate back to the main menu. If i
 
 **Edit Entry**
 
-Press **2** to edit an entry.
+Press **2** to edit an entry. Insert the message serial number of the log you wish to update and press enter.
+
+The edit entry only updates the status of the message.
 
 ![edit_menu](https://user-images.githubusercontent.com/51066040/59158181-0e6d1e00-8afa-11e9-9d3b-c22773fc6bd7.png)
+
+Once you press enter the program will display the message you wish to edit.
+
+![edit_entry](https://user-images.githubusercontent.com/51066040/59158283-30b36b80-8afb-11e9-8a49-06f816a5e012.png)
+
+
 
