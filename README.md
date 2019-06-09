@@ -1,5 +1,5 @@
 # Logbook
-A simple python script used for logging entries. It is using peewee which is a small but powerful ORM. **Logbook** can be used for work or personal purposes. However, it has a limited text editing capability. It can only accept 450 characters (including spaces) on its message log. **Logbook** is designed to capture text entries and saved it on its database (logbook.db). Each log entries are tag with serial number, status, and time stamp. These atributes are useful for searching and keeping track of task or messages saved in the database. Also, **Logbook** has the ability to save all entries into a text file for archiving purposes.
+A simple python script for logging entries. The program uses peewee which is a small but powerful ORM. You can use **Logbook** for work or personal purposes. However, it has a limited text editing capability. It can only accept 450 characters (including spaces) on its message log. **Logbook** is designed to capture text entries and save in the logbook database (logbook.db). Each log entries are tag with a serial number, status, and time stamp. These atributes are useful for record keeping. Also, **Logbook** has the ability to save all entries into a text file.
 
 Open the program using python 3.
 
@@ -11,7 +11,7 @@ Press **1** to add a new entry.
 
 ![add_entry](https://user-images.githubusercontent.com/51066040/59158012-5e96b100-8af7-11e9-8175-6ae991f1ae60.png)
 
-Press Enter to save the new message. A **Warning** message will be displayed below the **Comment** message. The **Warning** message states not to press the down button. Otherwise, you'll loose your entry due to the CLI functionality. The next option will asked you whether you wish to use **Open**, **Close**, or **Info**.
+Press Enter to save the new message. A **Warning** message will be displayed below the **Comment** section. The **Warning** message states not to press the up or down arrow key. Otherwise, you'll loose your entry due to the CLI functionality. The next option will asked you whether you wish to use **Open**, **Close**, or **Info**.
 
 **Open** messages are incomplete task.
 
