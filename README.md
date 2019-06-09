@@ -77,6 +77,18 @@ The program will prompt you whether you wish to continue or not. If you choose t
 
 However, if you do not wish to continue. The program will terminate the delete function and will revert back to the main menu. Also, a **System** message will appear above the log stating no messages was deleted.
 
+**Save File**
+
+Press **6** to create a text file for the logbook database.
+
+![save_to_text](https://user-images.githubusercontent.com/51066040/59158757-71fb4980-8b02-11e9-875a-06371b125ea0.png)
+
+The text file name is saved as a date time group. The file will be  at the same location as logbook.py. A **System** message will appear above the logo stating the file name of the log messages.
+
+**Z All**
+
+Press **9** will delete all log entry.
+
 
 
 
