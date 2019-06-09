@@ -67,11 +67,17 @@ All fields on **Date Time Group** must be filled. Also, **Enter the message Hour
 
 **Delete Entry**
 
-Similar to **Edit Entry** select the serial number of the message you want to delete.
+Press **5** to delete a single entry. Similar to **Edit Entry** select the serial number of the message you want to delete.
+
+![delete_entry](https://user-images.githubusercontent.com/51066040/59158727-f6010180-8b01-11e9-9a81-7c7a77f423d4.png)
 
 The program will prompt you whether you wish to continue or not. If you choose to continue the message will be deleted. The program will go back to the main menu with a **System** message. The **System** message will state the deletion of message was successful. 
 
+![delete_entry_value](https://user-images.githubusercontent.com/51066040/59158728-f8635b80-8b01-11e9-908d-b07bb0ba6bca.png)
+
 However, if you do not wish to continue. The program will terminate the delete function and will revert back to the main menu. Also, a **System** message will appear above the log stating no messages was deleted.
+
+
 
 
 
