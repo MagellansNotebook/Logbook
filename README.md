@@ -53,15 +53,25 @@ Press **3** to view all entries. It will display 5 entries at a time.
 
 **Search Entry**
 
-Press **4** to search a specific entry. Search entry by **Message Serial Number**, **DateTimeGroup**, **Status**, **Content**
+Press **4** to search a specific entry. Search entry by **Serial Number**, **DateTimeGroup**, **Status**, **Content**
 
+![search_entry](https://user-images.githubusercontent.com/51066040/59158634-70c91d00-8b00-11e9-8c25-d1feaf4a4cd5.png)
 
-
-**Message Serial** if straightforward. Simply enter the message serail number and press enter.
+**Serial Number** is straightforward to use. Simply enter the message serail number and press enter.
 
 All fields on **Date Time Group** must be filled. Also, **Enter the message Hour:Min:** must have 4 digit numbers. Otherwise, a value error will occur. The **Date Time Group** displays all message logs greater than the entered date.
 
+![searcg_dtg](https://user-images.githubusercontent.com/51066040/59158635-73c40d80-8b00-11e9-824c-0cbf2840986f.png)
+
 **Status** and **Content** performs a similar function. For **Status**, it will display all message logs against the status entered. With **Content**, it will display all message logs that contains keywords specific to the entered value.
+
+**Delete Entry**
+
+Similar to **Edit Entry** select the serial number of the message you want to delete.
+
+The program will prompt you whether you wish to continue or not. If you choose to continue the message will be deleted. The program will go back to the main menu with a **System** message. The **System** message will state the deletion of message was successful. 
+
+However, if you do not wish to continue. The program will terminate the delete function and will revert back to the main menu. Also, a **System** message will appear above the log stating no messages was deleted.
 
 
 
