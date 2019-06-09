@@ -51,6 +51,17 @@ Press **3** to view all entries. It will display 5 entries at a time.
 
 ![view_entry](https://user-images.githubusercontent.com/51066040/59158431-56da0b00-8afd-11e9-9e0b-8408acf4451f.png)
 
+**Search Entry**
+
+Press **4** to search a specific entry. Search entry by **Message Serial Number**, **DateTimeGroup**, **Status**, **Content**
+
+
+
+**Message Serial** if straightforward. Simply enter the message serail number and press enter.
+
+All fields on **Date Time Group** must be filled. Also, **Enter the message Hour:Min:** must have 4 digit numbers. Otherwise, a value error will occur. The **Date Time Group** displays all message logs greater than the entered date.
+
+**Status** and **Content** performs a similar function. For **Status**, it will display all message logs against the status entered. With **Content**, it will display all message logs that contains keywords specific to the entered value.
 
 
 
