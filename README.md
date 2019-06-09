@@ -45,6 +45,11 @@ Once complete and successful a **System** message will appear above the logo.
 
 ![edit_entry_complete](https://user-images.githubusercontent.com/51066040/59158377-d1eef180-8afc-11e9-8d3d-34af1244af56.png)
 
+**View Entry**
+
+Press **3** to view all entries. It will display 5 entries at a time.
+
+![view_entry](https://user-images.githubusercontent.com/51066040/59158431-56da0b00-8afd-11e9-9e0b-8408acf4451f.png)
 
 
 
