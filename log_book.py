@@ -391,6 +391,12 @@ def save_entry():
 				write_file.write('[Message]\n\n')
 				entry_msg = textwrap.fill(entry.msg,initial_indent='\t',subsequent_indent='\t',width=60)
 				write_file.write(entry_msg+'\n\n')
+				
+				if entry.logs_comment.cmt != 'N/A':
+					write_file.write('\t[Comment] DTG update: '+entry.logs_comment.timestamp+'\n')
+					write_file.write('\t[Message]\n\n')
+					entry_cmt = textwrap.fill(entry.logs_comment.cmt,initial_indent='\t',subsequent_indent='\t',width=60)
+					write_file.write('\t'+entry_cmt+'\n\n')
 
 			write_file.close()
 
