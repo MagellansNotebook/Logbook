@@ -6,12 +6,20 @@ import os
 import datetime
 import textwrap
 
-db = SqliteDatabase('logbook.db')
+db = SqliteDatabase('logbook_test.db')
+
+class Comment(Model):
+	cmt = TextField()
+	timestamp = TextField()
+
+	class Meta:
+		database = db
 
 class Logs(Model):
 	msg = TextField()
 	timestamp = DateTimeField(default=datetime.datetime.now)
 	condition = TextField()
+	logs_comment = ForeignKeyField(Comment)
 
 	class Meta:
 		database = db
@@ -97,8 +105,11 @@ def add_entry():
 				elif selection == 3:
 					status_input = 'Info'
 
-				new_logs = Logs.create(msg=data,condition=status_input)
+				no_comment = Comment.create(cmt='N/A',timestamp='N/A')
+				no_comment.save()
+				new_logs = Logs.create(msg=data,condition=status_input,logs_comment=no_comment)
 				new_logs.save()
+				
 
 				cls()
 
@@ -127,30 +138,28 @@ def edit_entry():
 		cls()
 
 		query_id(id_input)
-		print(greeting.__doc__)
-		print(Style.BRIGHT+Fore.YELLOW+'[Comment]'+Style.RESET_ALL+' Status: [1] Open, [2] Close, [3] Info, [4] Exit to main menu')
+		print(Style.BRIGHT+Fore.YELLOW+'[Comment]'+Style.RESET_ALL+' Status: [1] Open, [2] Close, [3] Info, Press [Enter] to exit')
 
 		update_condition = int(input('Enter the new Status of the message: '))
 
 		if update_condition == 1:
 			new_condition = 'Open'
+			update_cond(new_condition,id_input)
 
 		elif update_condition == 2:
 			new_condition = 'Close'
+			update_cond(new_condition,id_input)
 
 		elif update_condition == 3:
 			new_condition = 'Info'
+			update_cond(new_condition,id_input)
 
 		elif update_condition == 4:
-
-			cls()
-
-		new_condition_update = Logs.update(condition=new_condition).where(Logs.id == id_input)
-		new_condition_update.execute()
+			pass
 
 		cls()
 
-		print(Style.BRIGHT+Fore.CYAN+'[System]'+Style.RESET_ALL, f'Status update on message serial number: {id_input}')
+		print(Style.BRIGHT+Fore.CYAN+'[System]'+Style.RESET_ALL, f'Message serial number: {id_input} updated')
 
 	except UnboundLocalError:
 
@@ -158,12 +167,30 @@ def edit_entry():
 
 		print(Style.BRIGHT+Fore.RED+'[Error]'+Style.RESET_ALL,'UnboundLocalError occured. Exiting to main menu.')
 
+def update_cond(new_condition,id_input):
+	"""Changes the status of the message and inserts comments"""
+
+	from datetime import datetime
+
+	datetime = datetime.now().strftime('%d %B %H%M %Y')
+
+	new_condition_update = Logs.update(condition=new_condition).where(Logs.id == id_input)
+	new_condition_update.execute()
+
+	if new_condition != 'Info':
+		update_comment = str(input('Comment:\n'))
+
+		new_comment_update = Comment.update(cmt=update_comment,timestamp=datetime).where(Comment.id == id_input)
+		new_comment_update.execute()
+
 def view_all():
 	"""View All"""
 
 	query = Logs.select()
 
 	display_entry(query)
+
+	cls()
 
 def query_id(id_input):
 	"""Search by serial number"""
@@ -232,9 +259,12 @@ def display_entry(query):
 				print('[Message]:\n')
 				print(textwrap_func(entry.msg))
 
-			input(Style.BRIGHT+Fore.YELLOW+'\n\n[Comment]'+Style.RESET_ALL+' Press [Enter] to continue.')
+				if entry.logs_comment.cmt != 'N/A':
+					print('\n\t[Comment] DTG update: ',Style.BRIGHT+Fore.GREEN+entry.logs_comment.timestamp+Style.RESET_ALL)
+					print('\t[Message]:\n')
+					print('\t',textwrap_func(entry.logs_comment.cmt))
 
-			cls()
+			input(Style.BRIGHT+Fore.YELLOW+'\n\n[Comment]'+Style.RESET_ALL+' Press [Enter] to continue.')
 
 			break
 	
@@ -248,11 +278,13 @@ def search_entry():
 	search_value = int(input('Select the parameter number you would like to search: '))
 
 	if search_value == 1:
-		id_input = int(input(Style.BRIGHT+Fore.YELLOW+'[Comment]'+Style.RESET_ALL+'Enter the message Serial Number: '))
+		id_input = int(input('Enter the message Serial Number: '))
 
 		cls()
 
 		query_id(id_input)
+
+		cls()
 
 	elif search_value == 2:
 		print(Style.BRIGHT+Fore.YELLOW+'[Comment]'+Style.RESET_ALL+' DateTimeGroup')
@@ -287,19 +319,27 @@ def search_entry():
 
 		dtg_func(dtg_input)
 
+		cls()
+
 	elif search_value == 3:
-		status_input = str(input(Style.BRIGHT+Fore.YELLOW+'[Comment]'+Style.RESET_ALL+'Enter the message Status: '))
+		print(Style.BRIGHT+Fore.YELLOW+'[Comment]'+Style.RESET_ALL+' Status')
+		status_input = str(input('Enter the message Status: '))
 		
 		cls()
 
 		status(status_input)
 
+		cls()
+
 	elif search_value == 4:
-		message_input = str(input(Style.BRIGHT+Fore.YELLOW+'[Comment]'+Style.RESET_ALL+'Enter the keywords you wish to search: '))
+		print(Style.BRIGHT+Fore.YELLOW+'[Comment]'+Style.RESET_ALL+' Message Content')
+		message_input = str(input('Enter the keywords you wish to search: '))
 
 		cls()
 
-		message(message_input)		
+		message(message_input)	
+
+		cls()	
 
 	else:
 
@@ -392,6 +432,7 @@ if __name__ == "__main__":
 		try:
 			menu = OrderedDict([(0,exit_func),(1,add_entry),(2,edit_entry),(3,view_all),(4,search_entry),(5,delete_entry),(6,save_entry),(9,z_all)])
 			Logs.create_table()
+			Comment.create_table()
 			menu_loop()
 
 		except KeyboardInterrupt:
