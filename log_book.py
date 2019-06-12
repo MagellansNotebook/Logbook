@@ -296,13 +296,10 @@ def search_entry():
 
 	elif search_value == 4:
 		message_input = str(input(Style.BRIGHT+Fore.YELLOW+'[Comment]'+Style.RESET_ALL+'Enter the keywords you wish to search: '))
-		id_input = None
-		dtg_input = None
-		status_input = None
 
 		cls()
 
-		view_entry(id_input,dtg_input,status_input,message_input)		
+		message(message_input)		
 
 	else:
 
