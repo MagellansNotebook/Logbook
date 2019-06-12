@@ -41,6 +41,10 @@ Select the new status of the message and press enter.
 
 ![edit_entry_change](https://user-images.githubusercontent.com/51066040/59158337-2e054600-8afc-11e9-8bf7-c8b9f52b2972.png)
 
+Whenever a change is made to status, you will be asked to put a comment on the change or type N/A if not required.
+
+![edit_entry_comment](https://user-images.githubusercontent.com/51066040/59323486-2f15bd80-8d1e-11e9-881b-9723c064cbde.png)
+
 Once complete and successful a **System** message will appear above the logo.
 
 ![edit_entry_complete](https://user-images.githubusercontent.com/51066040/59158377-d1eef180-8afc-11e9-8d3d-34af1244af56.png)
