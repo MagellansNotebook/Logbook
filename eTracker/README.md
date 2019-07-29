@@ -43,7 +43,7 @@ If the details of the item is incorrect simply double click on it and it will au
 
 The Track Page is used to check the item's history. It keeps 10 recorded events which displays when it was last checked and the updates made to the item. Particularly, the changes made on the **Location** is important because it will tell the user where it was last seen.
 
-The user can search of a particular item either by the following:
+The user can search for a particular item either by the following:
 * Unique ID
 * Description
 * Serial Number
