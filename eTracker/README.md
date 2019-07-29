@@ -59,6 +59,10 @@ Double-click on the item to check its history. The details will be displayed on 
 
 The Upload option in the File menu uploads a spreadsheet with details entered in the format below. This makes it easier to add a large amount of data into the database.
 
+![Spreadsheet](https://user-images.githubusercontent.com/51066040/62019772-b0101200-b203-11e9-8f59-b615b88b7b5b.jpg)
 
+The Upload option can only upload spreadsheet with **.xlsx**.
+
+![Upload](https://user-images.githubusercontent.com/51066040/62019779-bf8f5b00-b203-11e9-9ea9-db4a5219b761.jpg)
 
 
