@@ -76,3 +76,9 @@ The Add Page adds a new items into the database. The user can add 10 item simult
 The Edit Page simply updates any new changes made into an item. The user will search the equipment first by either looking for its **Unique ID**, **Serial Number** or **Asset Number**. If the item exists it will be displayed on the **Equipment List Box**. Double-clicking on the selected item would populate the details under the **Edit Item Box**. From there, the user would be able to change any details and the **Commit Button** will update the item into the database.
 
 ![EditPage](https://user-images.githubusercontent.com/51066040/62022079-d2a72880-b20d-11e9-869c-71f58f41519f.jpg)
+
+**Delete Page**
+
+The Delete Page is used to remove any item saved in the database. Like **Edit Page**, the user can search for the item by either searching for its **Unique ID**, **Serial Number** or **Asset Number**. If the item exists it will be displayed on the **Equipment List Box**. By clicking on the **Commit Box**, it will delete all items in the **Equipment List Box**.
+
+![DeletePage](https://user-images.githubusercontent.com/51066040/62023150-f456de80-b212-11e9-8815-49e842fc7105.jpg)
