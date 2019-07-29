@@ -1183,8 +1183,9 @@ class SearchPage(tk.Frame):
 			for entry in self.treeview.get_children():
 				for values in self.treeview.item(entry, 'values'):
 					entryList.append(values)
-			# Prompts the user File is saved
-			messagebox.showinfo("Message", "File Saved")
+			if self.filename:
+				# Prompts the user File is saved
+				messagebox.showinfo("Message", "File Saved")
 			# Creates a maximum range from the treeview
 			lengthOfList = len(entryList)//11
 			for i in range(0,lengthOfList+1):
