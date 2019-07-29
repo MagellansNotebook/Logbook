@@ -52,3 +52,5 @@ The user can search of a particular item either by the following:
 By simply clicking on the **Add Button** or pressing **Enter** will seach for the item from the database. It will display its information in the **Equipment List Box** if it existed.
 
 Double-click on the item to check its history. The details will be displayed on the **Record List Box**.
+
+![TrackPage](https://user-images.githubusercontent.com/51066040/62018828-b69c8a80-b1ff-11e9-8dac-308d258437c1.jpg)
