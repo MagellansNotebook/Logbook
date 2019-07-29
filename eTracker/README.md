@@ -54,3 +54,11 @@ By simply clicking on the **Add Button** or pressing **Enter** will seach for th
 Double-click on the item to check its history. The details will be displayed on the **Record List Box**.
 
 ![TrackPage](https://user-images.githubusercontent.com/51066040/62019485-63780700-b202-11e9-8204-657d33a5e5b6.jpg)
+
+**Upload**
+
+The Upload option in the File menu uploads a spreadsheet with details entered in the format below. This makes it easier to add a large amount of data into the database.
+
+
+
+
