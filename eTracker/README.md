@@ -65,4 +65,6 @@ The Upload option can only upload spreadsheet with **.xlsx**.
 
 ![Upload](https://user-images.githubusercontent.com/51066040/62019779-bf8f5b00-b203-11e9-9ea9-db4a5219b761.jpg)
 
+**Add Page**
 
+The Add Page adds a new items into the database. The user can add 10 item simultaneously by clicking on the **Add Button**. The items will be displayed on the **Equipment List Box**. Double-clicking on the selected item would remove it from the **Equipment List** if the user made an error. The **Commit Button** will add the items into the database.
