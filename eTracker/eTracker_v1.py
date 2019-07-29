@@ -16,7 +16,7 @@ import tkinter as tk
 import threading
 import os
 ################################################################
-#  							       #
+#  															   #
 #         Main tk App class to display the window box          #
 #                                                              #
 ################################################################
@@ -70,7 +70,7 @@ class App(tk.Tk):
 		frame = self.frame[win]
 		frame.tkraise()
 ################################################################
-#  							       #
+#  															   #
 #                     Displays Treeview                        #
 #                                                              #
 ################################################################
@@ -200,7 +200,7 @@ class DisplayTreeView(ttk.Treeview):
 		"""Passess in Treeview"""
 		return self.tree
 ################################################################
-#  						               #
+#  															   #
 #                     Message Box Classes                      #
 #                                                              #
 ################################################################
@@ -309,7 +309,7 @@ class UploadFunc(tk.Toplevel):
 			errorMsg = "Error"
 			return errorMsg
 ################################################################
-#  							       #
+#  															   #
 #                    Page Class - Add Page                     #
 #                                                              #
 ################################################################
@@ -501,7 +501,7 @@ class AddPage(tk.Frame):
 			# Ignores error
 			pass
 ################################################################
-#  							       #
+#  															   #
 #                 Page Class - Blank Page                      #
 #                                                              #
 ################################################################
@@ -512,7 +512,7 @@ class BlankPage(tk.Frame):
 		labelPage = LabelFrame(self, width=1450, height=780)
 		labelPage.pack(expand=0, fill='both')
 ################################################################
-#  							       #
+#  															   #
 #                Page Class - Delete Page                      #
 #                                                              #
 ################################################################
@@ -594,7 +594,7 @@ class DeletePage(tk.Frame):
 		for cells in listEntry:
 			cells.delete(first=0, last=100)
 ################################################################
-#  							       #
+#  															   #
 #                  Page Class - Edit Page                      #
 #                                                              #
 ################################################################
@@ -780,7 +780,7 @@ class EditPage(tk.Frame):
 		except IndexError:
 			pass
 ################################################################
-#  							       #
+#  															   #
 #                  Page Class - Info Page                      #
 #                                                              #
 ################################################################
@@ -912,7 +912,7 @@ class InfoPage(tk.Frame):
 		values = contents['values']
 		self.entryNSN.insert(END, values[2])
 ################################################################
-#  							       #
+#  															   #
 #                  Page Class - Scan Page                      #
 #                                                              #
 ################################################################
@@ -934,7 +934,6 @@ class ScanPage(tk.Frame):
 		self.entry.grid(row=2, column=0, padx=5, pady=5, sticky='w')
 		#<---------------------------------------------------------------------------| Button
 		tk.Button(labelFrameDate, text="Clear Scan List", command=self.clearListButton, width=20).grid(row=2, column=1, sticky='w')
-		tk.Button(labelFrameDate, text="Update File", command=self.updateFileButton, width=20).grid(row=2, column=2, sticky='w')
 		#<---------------------------------------------------------------------------| LabelFrame for Treeview and Display Treeview
 		labelFrameTree = LabelFrame(self, text="Equipment List", font=style)
 		labelFrameTree.pack(expand=1, fill='both')
@@ -1080,27 +1079,8 @@ class ScanPage(tk.Frame):
 		query = database.scan(value)
 		self.displayTree.displayTree(query)
 		self.entry.delete(first=0, last=100)
-	def updateFileButton(self):
-		"""Uploads Excel file to the database"""
-		self.filename = filedialog.askopenfilename(title="Select File", filetypes=(("Excel Files", "*.xlsx"),("All Files","*.*")))
-		try:
-			if self.filename:
-				wb = load_workbook(self.filename)
-				ws = wb["Sheet1"]
-				# Counters
-				progressCount = 0
-				for row in ws.iter_rows(min_row=2, max_col=10, values_only=True):
-					database.fileUpload(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9])
-					# Number of items to be added to the database 
-					progressCount =+ progressCount + 1
-					os.system('CLS')
-					print(progressCount)
-		except KeyError:
-			messagebox.showerror("Error", "An error occured during the upload process.\n Tab title is not set to 'Sheet1'")
-			errorMsg = "Error"
-			return errorMsg
 ################################################################
-#  							       #
+#  															   #
 #                  Page Class - Search Page                    #
 #                                                              #
 ################################################################
@@ -1672,7 +1652,7 @@ class SearchPage(tk.Frame):
 		query = database.viewAll()
 		self.displayTree.displayTree(query)
 ################################################################
-#  							       #
+#  															   #
 #                 Page Class - Track Page                      #
 #                                                              #
 ################################################################
