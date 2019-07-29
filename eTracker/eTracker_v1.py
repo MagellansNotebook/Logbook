@@ -16,7 +16,7 @@ import tkinter as tk
 import threading
 import os
 ################################################################
-#  															   #
+#  							       #
 #         Main tk App class to display the window box          #
 #                                                              #
 ################################################################
@@ -70,7 +70,7 @@ class App(tk.Tk):
 		frame = self.frame[win]
 		frame.tkraise()
 ################################################################
-#  															   #
+#  							       #
 #                     Displays Treeview                        #
 #                                                              #
 ################################################################
@@ -200,7 +200,7 @@ class DisplayTreeView(ttk.Treeview):
 		"""Passess in Treeview"""
 		return self.tree
 ################################################################
-#  															   #
+#  							       #
 #                     Message Box Classes                      #
 #                                                              #
 ################################################################
@@ -309,7 +309,7 @@ class UploadFunc(tk.Toplevel):
 			errorMsg = "Error"
 			return errorMsg
 ################################################################
-#  															   #
+#  							       #
 #                    Page Class - Add Page                     #
 #                                                              #
 ################################################################
@@ -501,7 +501,7 @@ class AddPage(tk.Frame):
 			# Ignores error
 			pass
 ################################################################
-#  															   #
+#  							       #
 #                 Page Class - Blank Page                      #
 #                                                              #
 ################################################################
@@ -512,7 +512,7 @@ class BlankPage(tk.Frame):
 		labelPage = LabelFrame(self, width=1450, height=780)
 		labelPage.pack(expand=0, fill='both')
 ################################################################
-#  															   #
+#  							       #
 #                Page Class - Delete Page                      #
 #                                                              #
 ################################################################
@@ -594,7 +594,7 @@ class DeletePage(tk.Frame):
 		for cells in listEntry:
 			cells.delete(first=0, last=100)
 ################################################################
-#  															   #
+#  							       #
 #                  Page Class - Edit Page                      #
 #                                                              #
 ################################################################
@@ -780,7 +780,7 @@ class EditPage(tk.Frame):
 		except IndexError:
 			pass
 ################################################################
-#  															   #
+#  						               #
 #                  Page Class - Info Page                      #
 #                                                              #
 ################################################################
@@ -912,7 +912,7 @@ class InfoPage(tk.Frame):
 		values = contents['values']
 		self.entryNSN.insert(END, values[2])
 ################################################################
-#  															   #
+#  						               #
 #                  Page Class - Scan Page                      #
 #                                                              #
 ################################################################
@@ -1080,7 +1080,7 @@ class ScanPage(tk.Frame):
 		self.displayTree.displayTree(query)
 		self.entry.delete(first=0, last=100)
 ################################################################
-#  															   #
+#  							       #
 #                  Page Class - Search Page                    #
 #                                                              #
 ################################################################
@@ -1652,7 +1652,7 @@ class SearchPage(tk.Frame):
 		query = database.viewAll()
 		self.displayTree.displayTree(query)
 ################################################################
-#  															   #
+#  							       #
 #                 Page Class - Track Page                      #
 #                                                              #
 ################################################################
