@@ -38,3 +38,17 @@ The Scan Page is where the item check against the database. If the item exists t
 If the details of the item is incorrect simply double click on it and it will auto-populate the **Edit Item Box**. The user can update any information required. The **Commit Button** will save the changes made into the database.
 
 ![ScanPage](https://user-images.githubusercontent.com/51066040/62017680-eb5a1300-b1fa-11e9-9d54-0f883656f166.jpg)
+
+**Track Page**
+
+The Track Page is used to check the item's history. It keeps 10 recorded events which displays when it was last checked and the updates made to the item. Particularly, the changes made on the **Location** is important because it will tell the user where it was last seen.
+
+The user can search of a particular item either by the following:
+* Unique ID
+* Description
+* Serial Number
+* Asset Number
+
+By simply clicking on the **Add Button** or pressing **Enter** will seach for the item from the database. It will display its information in the **Equipment List Box** if it existed.
+
+Double-click on the item to check its history. The details will be displayed on the **Record List Box**.
