@@ -82,3 +82,11 @@ The Edit Page simply updates any new changes made into an item. The user will se
 The Delete Page is used to remove any item saved in the database. Like **Edit Page**, the user can search for the item by either searching for its **Unique ID**, **Serial Number** or **Asset Number**. If the item exists it will be displayed on the **Equipment List Box**. By clicking on the **Commit Box**, it will delete all items in the **Equipment List Box**.
 
 ![DeletePage](https://user-images.githubusercontent.com/51066040/62023150-f456de80-b212-11e9-8815-49e842fc7105.jpg)
+
+**Search Page**
+
+The Search Page is used to look for a specific item or a group of items in the database. The search query accepts any combination. If the item exists then it will display its details on the equipment list.
+
+The **Save Button** saves all details displayed on the **Equipment List**. It will save it as an Excel file.
+
+![SearchPage](https://user-images.githubusercontent.com/51066040/62023690-616b7380-b215-11e9-8d1a-a909a9bb7274.jpg)
