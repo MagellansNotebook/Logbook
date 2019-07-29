@@ -70,3 +70,9 @@ The Upload option can only upload spreadsheet with **.xlsx**.
 The Add Page adds a new items into the database. The user can add 10 item simultaneously by clicking on the **Add Button**. The items will be displayed on the **Equipment List Box**. Double-clicking on the selected item would remove it from the **Equipment List** if the user made an error. The **Upload Button** will add the items into the database.
 
 ![AddPage](https://user-images.githubusercontent.com/51066040/62021224-8c4fca80-b209-11e9-8260-1f2370bf8279.jpg)
+
+**Edit Page**
+
+The Edit Page simply updates any new changes made into an item. The user will search the equipment first by either looking for its **Unique ID**, **Serial Number** or **Asset Number**. If the item exists it will be displayed on the **Equipment List Box**. Double-clicking on the selected item would populate the details under the **Edit Item Box**. From there, the user would be able to change any details and the **Commit Button** will update the item into the database.
+
+![EditPage](https://user-images.githubusercontent.com/51066040/62022079-d2a72880-b20d-11e9-869c-71f58f41519f.jpg)
