@@ -37,3 +37,4 @@ The Scan Page is where the item check against the database. If the item exists t
 
 If the details of the item is incorrect simply double click on it and it will auto-populate the **Edit Item Box**. The user can update any information required. The **Commit Button** will save the changes made into the database.
 
+![ScanPage](https://user-images.githubusercontent.com/51066040/62017680-eb5a1300-b1fa-11e9-9d54-0f883656f166.jpg)
