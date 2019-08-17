@@ -23,11 +23,11 @@ class Display():
 		print("+{0:-^16}+{1:-^40}+{2:-^40}+{3:-^40}+".format("","","",""))
 	def displayAccounts():
 		print("\n")
-		print("+{0:-^120}+".format(""))
-		print("|{0:^120}|".format("Display Accounts"))
-		print("+{0:-^10}+{1:-^16}+{2:-^40}+{3:-^20}+{4:-^30}+".format("","","","",""))
-		print("|{0:^10}| {1:<15}| {2:<39}| {3:<19}| {4:<29}|".format("Serial","Service Name","User Name","Group Item","Date Time Group"))
-		print("+{0:-^10}+{1:-^16}+{2:-^40}+{3:-^20}+{4:-^30}+".format("","","","",""))
+		print("+{0:-^124}+".format(""))
+		print("|{0:^124}|".format("Display Accounts"))
+		print("+{0:-^10}+{1:-^20}+{2:-^40}+{3:-^20}+{4:-^30}+".format("","","","",""))
+		print("|{0:^10}| {1:<19}| {2:<39}| {3:<19}| {4:<29}|".format("Serial","Service Name","User Name","Group Item","Date Time Group"))
+		print("+{0:-^10}+{1:-^20}+{2:-^40}+{3:-^20}+{4:-^30}+".format("","","","",""))
 	def displayTitle(name):
 		print("\n")
 		print("+{0:-^30}+".format(""))
@@ -158,8 +158,8 @@ def displayAcc():
 	else:
 		Display.displayAccounts()
 		for entry in query:
-			print("|{0:^10}| {1:<15}| {2:<39}| {3:<19}| {4:<29}|".format(entry.id,entry.serviceName,entry.userName,entry.groupItem,str(entry.dtg)))
-		print("+{0:-^10}+{1:-^16}+{2:-^40}+{3:-^20}+{4:-^30}+".format("","","","",""))
+			print("|{0:^10}| {1:<19}| {2:<39}| {3:<19}| {4:<29}|".format(entry.id,entry.serviceName,entry.userName,entry.groupItem,str(entry.dtg)))
+		print("+{0:-^10}+{1:-^20}+{2:-^40}+{3:-^20}+{4:-^30}+".format("","","","",""))
 		while True:
 			option = str(input("\nDo you wish to view more details on an account?\nPress [Y] to continue or [N] to go back to main menu: ").lower())
 			if option == "y":
@@ -178,8 +178,8 @@ def updateKey():
 	query = database.view()
 	Display.displayAccounts()
 	for entry in query:
-		print("|{0:^10}| {1:<15}| {2:<39}| {3:<19}| {4:<29}|".format(entry.id,entry.serviceName,entry.userName,entry.groupItem,str(entry.dtg)))
-	print("+{0:-^10}+{1:-^16}+{2:-^40}+{3:-^20}+{4:-^30}+".format("","","","",""))
+		print("|{0:^10}| {1:<19}| {2:<39}| {3:<19}| {4:<29}|".format(entry.id,entry.serviceName,entry.userName,entry.groupItem,str(entry.dtg)))
+	print("+{0:-^10}+{1:-^20}+{2:-^40}+{3:-^20}+{4:-^30}+".format("","","","",""))
 	while True:
 		option = str(input("\nDo you wish to edit an account.\nPress [Y] to continue or [N] to go back to main menu: ").lower())
 		if option == "y":
@@ -219,8 +219,8 @@ def deleteAcc():
 	query = database.view()
 	Display.displayAccounts()
 	for entry in query:
-		print("|{0:^10}| {1:<15}| {2:<39}| {3:<19}| {4:<29}|".format(entry.id,entry.serviceName,entry.userName,entry.groupItem,str(entry.dtg)))
-	print("+{0:-^10}+{1:-^16}+{2:-^40}+{3:-^20}+{4:-^30}+".format("","","","",""))
+		print("|{0:^10}| {1:<19}| {2:<39}| {3:<19}| {4:<29}|".format(entry.id,entry.serviceName,entry.userName,entry.groupItem,str(entry.dtg)))
+	print("+{0:-^10}+{1:-^20}+{2:-^40}+{3:-^20}+{4:-^30}+".format("","","","",""))
 	while True:
 		option = str(input("\nDo you wish to delete an account? [Y] to continue or [N] to go back to the main menu: ").lower())
 		if option == "y":
