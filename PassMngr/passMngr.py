@@ -178,7 +178,7 @@ def updateKey():
 	query = database.view()
 	Display.displayAccounts()
 	for entry in query:
-		print("|{0:^10}|{1:^16}|{2:^40}|{3:^20}|{4:^30}|".format(entry.id,entry.serviceName,entry.userName,entry.groupItem,str(entry.dtg)))
+		print("|{0:^10}| {1:<15}| {2:<39}| {3:<19}| {4:<29}|".format(entry.id,entry.serviceName,entry.userName,entry.groupItem,str(entry.dtg)))
 	print("+{0:-^10}+{1:-^16}+{2:-^40}+{3:-^20}+{4:-^30}+".format("","","","",""))
 	while True:
 		option = str(input("\nDo you wish to edit an account.\nPress [Y] to continue or [N] to go back to main menu: ").lower())
