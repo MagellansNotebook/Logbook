@@ -14,20 +14,20 @@ class Display():
 		pass
 	def createNewDply(serName, useName, pasWord, grpItem):
 		print("\n")
-		print("+{0:-^81}+".format(""))
-		print("|{0:^81}|".format("New Account"))
-		print("+{0:-^16}+{1:-^40}+{2:-^10}+{3:-^12}+".format("","","",""))
-		print("|{0:^16}|{1:^40}|{2:^10}|{3:^12}|".format("Service Name","User Name","Password","Group Item"))
-		print("+{0:-^16}+{1:-^40}+{2:-^10}+{3:-^12}+".format("","","",""))
-		print("|{0:^16}|{1:^40}|{2:^10}|{3:^12}|".format(serName, useName, pasWord, grpItem))
-		print("+{0:-^16}+{1:-^40}+{2:-^10}+{3:-^12}+".format("","","",""))
+		print("+{0:-^139}+".format(""))
+		print("|{0:^139}|".format("New Account"))
+		print("+{0:-^16}+{1:-^40}+{2:-^40}+{3:-^40}+".format("","","",""))
+		print("|{0:^16}|{1:^40}|{2:^40}|{3:^40}|".format("Service Name","User Name","Password","Group Item"))
+		print("+{0:-^16}+{1:-^40}+{2:-^40}+{3:-^40}+".format("","","",""))
+		print("|{0:^16}|{1:^40}|{2:^40}|{3:^40}|".format(serName, useName, pasWord, grpItem))
+		print("+{0:-^16}+{1:-^40}+{2:-^40}+{3:-^40}+".format("","","",""))
 	def displayAccounts():
 		print("\n")
-		print("+{0:-^112}+".format(""))
-		print("|{0:^112}|".format("Display Accounts"))
-		print("+{0:-^10}+{1:-^16}+{2:-^40}+{3:-^12}+{4:-^30}+".format("","","","",""))
-		print("|{0:^10}|{1:^16}|{2:^40}|{3:^12}|{4:^30}|".format("Serial","Service Name","User Name","Group Item","Date Time Group"))
-		print("+{0:-^10}+{1:-^16}+{2:-^40}+{3:-^12}+{4:-^30}+".format("","","","",""))
+		print("+{0:-^120}+".format(""))
+		print("|{0:^120}|".format("Display Accounts"))
+		print("+{0:-^10}+{1:-^16}+{2:-^40}+{3:-^20}+{4:-^30}+".format("","","","",""))
+		print("|{0:^10}| {1:<15}| {2:<39}| {3:<19}| {4:<29}|".format("Serial","Service Name","User Name","Group Item","Date Time Group"))
+		print("+{0:-^10}+{1:-^16}+{2:-^40}+{3:-^20}+{4:-^30}+".format("","","","",""))
 	def displayTitle(name):
 		print("\n")
 		print("+{0:-^30}+".format(""))
@@ -44,13 +44,16 @@ def enc(pasWord):
 				# key encryption process
 				hashKeyParam = re.split("[, $]", hashKey)
 				passValue = (pasEncrypt+hashKeyParam[6][:-6]).zfill(32)
+				del pasEncrypt
+				del hashKeyParam
 				encodeHash = base64.urlsafe_b64encode(passValue.encode('utf-8'))
+				del passValue
 				encVal = cryptography.fernet.Fernet(encodeHash)
 				# result of encryption
 				password = encVal.encrypt(pasWord.encode('utf-8'))
+				del encVal
 				print("[MESSAGE] Password succesfully encrypted. Press [ENTER KEY] to continue...")
 				return hashKey, password
-				break
 			else:
 				print("[ERROR] Please enter a password. Press [ENTER KEY] to continue...")
 				continue
@@ -85,11 +88,16 @@ def denc(Id):
 						if result == True:
 							hashKeyParam = re.split("[, $]", entry.hashKey)
 							passValue = (pasEncrypt+hashKeyParam[6][:-6]).zfill(32)
+							del hashKeyParam
+							del pasEncrypt
 							encodeHash = base64.urlsafe_b64encode(passValue.encode('utf-8'))
+							del passValue
 							encVal = cryptography.fernet.Fernet(encodeHash)
 							# result of encryption
 							password = encVal.decrypt(entry.password)
+							del encVal
 							print("\nDecrypted Password: ", str(password)[2:-1])
+							del password
 						elif result == False:
 							print("[MESSAGE] Incorrect Password!. Press [ENTER KEY] and try again.")
 					break
@@ -125,6 +133,9 @@ def createNewAcc():
 				if selection == "y":
 					hashKey,password = enc(pasWord)
 					database.insert(serName,useName,password,hashKey,grpItem)
+					del pasWord
+					del hashKey
+					del password
 					print("[MESSAGE] Account Created. Press [ENTER KEY] to continue...")
 					break
 				elif selection == "n":
@@ -147,8 +158,8 @@ def displayAcc():
 	else:
 		Display.displayAccounts()
 		for entry in query:
-			print("|{0:^10}|{1:^16}|{2:^40}|{3:^12}|{4:^30}|".format(entry.id,entry.serviceName,entry.userName,entry.groupItem,str(entry.dtg)))
-		print("+{0:-^10}+{1:-^16}+{2:-^40}+{3:-^12}+{4:-^30}+".format("","","","",""))
+			print("|{0:^10}| {1:<15}| {2:<39}| {3:<19}| {4:<29}|".format(entry.id,entry.serviceName,entry.userName,entry.groupItem,str(entry.dtg)))
+		print("+{0:-^10}+{1:-^16}+{2:-^40}+{3:-^20}+{4:-^30}+".format("","","","",""))
 		while True:
 			option = str(input("\nDo you wish to view more details on an account?\nPress [Y] to continue or [N] to go back to main menu: ").lower())
 			if option == "y":
@@ -167,8 +178,8 @@ def updateKey():
 	query = database.view()
 	Display.displayAccounts()
 	for entry in query:
-		print("|{0:^10}|{1:^16}|{2:^40}|{3:^12}|{4:^30}|".format(entry.id,entry.serviceName,entry.userName,entry.groupItem,str(entry.dtg)))
-	print("+{0:-^10}+{1:-^16}+{2:-^40}+{3:-^12}+{4:-^30}+".format("","","","",""))
+		print("|{0:^10}|{1:^16}|{2:^40}|{3:^20}|{4:^30}|".format(entry.id,entry.serviceName,entry.userName,entry.groupItem,str(entry.dtg)))
+	print("+{0:-^10}+{1:-^16}+{2:-^40}+{3:-^20}+{4:-^30}+".format("","","","",""))
 	while True:
 		option = str(input("\nDo you wish to edit an account.\nPress [Y] to continue or [N] to go back to main menu: ").lower())
 		if option == "y":
@@ -190,6 +201,9 @@ def updateKey():
 				pasWord = str(input("\nEnter the new password for the account: "))
 				hashKey,password = enc(pasWord)
 				database.update(hashKey,password,Id)
+				del pasWord
+				del hashKey
+				del password
 				print("[MESSAGE] Account Updated. Press [ENTER KEY] to continue...")
 			elif result == False:
 				print("[ERROR] Incorrect Password. Please try again.")
@@ -205,8 +219,8 @@ def deleteAcc():
 	query = database.view()
 	Display.displayAccounts()
 	for entry in query:
-		print("|{0:^10}|{1:^16}|{2:^40}|{3:^12}|{4:^30}|".format(entry.id,entry.serviceName,entry.userName,entry.groupItem,str(entry.dtg)))
-	print("+{0:-^10}+{1:-^16}+{2:-^40}+{3:-^12}+{4:-^30}+".format("","","","",""))
+		print("|{0:^10}|{1:^16}|{2:^40}|{3:^20}|{4:^30}|".format(entry.id,entry.serviceName,entry.userName,entry.groupItem,str(entry.dtg)))
+	print("+{0:-^10}+{1:-^16}+{2:-^40}+{3:-^20}+{4:-^30}+".format("","","","",""))
 	while True:
 		option = str(input("\nDo you wish to delete an account? [Y] to continue or [N] to go back to the main menu: ").lower())
 		if option == "y":
