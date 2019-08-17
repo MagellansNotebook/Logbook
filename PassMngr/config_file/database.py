@@ -18,6 +18,7 @@ def insert(serviceName,userName,password,hashKey,groupItem):
 	"""Create new account in the database"""
 	createAcc = Accounts.create(serviceName=serviceName,userName=userName,password=password,hashKey=hashKey,groupItem=groupItem)
 	createAcc.save()
+	del password
 
 def view():
 	"""View all accounts"""
@@ -34,6 +35,7 @@ def update(hashKey,password,Id):
 	dtg = datetime.datetime.now()
 	updateKey = Accounts.update(password=password, hashKey=hashKey,dtg=dtg).where(Accounts.id == Id)
 	updateKey.execute()
+	del password
 
 def delete(Id):
 	"""Delete Account"""
