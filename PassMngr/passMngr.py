@@ -105,6 +105,7 @@ def denc(Id):
 					print("[ERROR] Please enter a password and try again.")
 					continue
 			elif selection == "n":
+				cls()
 				break
 			else:
 				print("[ERROR] Incorrect selection. Please select [Y] or [N]. Press [ENTER KEY] to continue...")
@@ -168,6 +169,7 @@ def displayAcc():
 				denc(selection)
 				break
 			elif option == "n":
+				cls()
 				break
 			else:
 				print("[ERROR] Incorrect selection. Please select [Y]es or [N]o. Press [ENTER KEY] to continue...")
@@ -209,6 +211,7 @@ def updateKey():
 				print("[ERROR] Incorrect Password. Please try again.")
 			break
 		elif option == "n":
+			cls()
 			break
 		else:
 			print("[ERROR] Incorrect selection. Please select [Y]es or [N]o. Press [ENTER KEY] to continue...")
@@ -229,6 +232,7 @@ def deleteAcc():
 			print("[MESSAGE] Account number {} deleted. Press [ENTER KEY] to continue...".format(entry.id))
 			break
 		elif option == "n":
+			cls()
 			break
 		else:
 			print("[ERROR] Incorrect selection. Please select [Y]es or [N]o. Press [ENTER KEY] to continue...")
