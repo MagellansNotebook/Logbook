@@ -34,6 +34,10 @@ class Display():
 		print("|{0:^30}|".format(name))
 		print("+{0:-^30}+".format(""))
 
+def cls():
+	"""Clears the CMD Line"""
+	os.system('CLS')
+
 def enc(pasWord):
 	"""Encrypt password using a secret word"""
 	while True:
