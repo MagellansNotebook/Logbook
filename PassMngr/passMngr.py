@@ -114,7 +114,11 @@ def denc(Id):
 							password = encVal.decrypt(entry.password)
 							del encVal #--------------> Removes the refernce object from the script
 							cls()
-							print("\nDecrypted Password: ", str(password)[2:-1])
+							Display.displayTitle("Account Details")
+							print("Service Name: ",entry.serviceName)
+							print("User Name: ",entry.userName)
+							print("Group Item: ",entry.groupItem)
+							print("\nDecrypted Password: ",str(password)[2:-1])
 							del password #--------------> Removes the refernce object from the script
 						elif result == False:
 							cls()
