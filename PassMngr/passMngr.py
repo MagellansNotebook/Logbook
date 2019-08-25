@@ -14,6 +14,7 @@ class Display():
 	def __init__(self):
 		pass
 	def createNewDply(serName, useName, pasWord, grpItem):
+		"""Displays New Account Details"""
 		cls()
 		print("\n")
 		print("+{0:-^118}+".format(""))
@@ -24,6 +25,7 @@ class Display():
 		print("|{0:^16}|{1:^40}|{2:^40}|{3:^19}|".format(serName, useName, pasWord, grpItem))
 		print("+{0:-^16}+{1:-^40}+{2:-^40}+{3:-^19}+".format("","","",""))
 	def displayAccounts():
+		"""Displays All Account Details"""
 		cls()
 		print("\n")
 		print("+{0:-^124}+".format(""))
@@ -32,6 +34,7 @@ class Display():
 		print("| {0:<19}|{1:^10}| {2:<39}| {3:<19}| {4:<29}|".format("Service Name","Serial","User Name","Group Item","Date Time Group"))
 		print("+{0:-^20}+{1:-^10}+{2:-^40}+{3:-^20}+{4:-^30}+".format("","","","",""))
 	def displayTitle(name):
+		"""Display Title"""
 		print("\n")
 		print("+{0:-^30}+".format(""))
 		print("|{0:^30}|".format(name))
