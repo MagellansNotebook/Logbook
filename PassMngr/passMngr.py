@@ -17,13 +17,13 @@ class Display():
 		"""Displays New Account Details"""
 		cls()
 		print("\n")
-		print("+{0:-^118}+".format(""))
-		print("|{0:^118}|".format("New Account"))
-		print("+{0:-^16}+{1:-^40}+{2:-^40}+{3:-^19}+".format("","","",""))
-		print("|{0:^16}|{1:^40}|{2:^40}|{3:^19}|".format("Service Name","User Name","Password","Group Item"))
-		print("+{0:-^16}+{1:-^40}+{2:-^40}+{3:-^19}+".format("","","",""))
-		print("|{0:^16}|{1:^40}|{2:^40}|{3:^19}|".format(serName, useName, pasWord, grpItem))
-		print("+{0:-^16}+{1:-^40}+{2:-^40}+{3:-^19}+".format("","","",""))
+		print("+{0:-^121}+".format(""))
+		print("|{0:^121}|".format("New Account"))
+		print("+{0:-^19}+{1:-^40}+{2:-^40}+{3:-^19}+".format("","","",""))
+		print("|{0:^19}|{1:^40}|{2:^40}|{3:^19}|".format("Service Name","User Name","Password","Group Item"))
+		print("+{0:-^19}+{1:-^40}+{2:-^40}+{3:-^19}+".format("","","",""))
+		print("|{0:^19}|{1:^40}|{2:^40}|{3:^19}|".format(serName, useName, pasWord, grpItem))
+		print("+{0:-^19}+{1:-^40}+{2:-^40}+{3:-^19}+".format("","","",""))
 	def displayAccounts():
 		"""Displays All Account Details"""
 		cls()
@@ -230,7 +230,7 @@ def updateKey():
 			query = database.select(Id)
 			keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 			for entry in query:
-				hashKeyParam = re.split("[, $]", entry.hashKey)
+				hashKeyParam = re.split("[, $]",entry.hashKey)
 				print("\nSerial: ",entry.id)
 				print("Service Name: ",entry.serviceName)
 				print("User Name: ",entry.userName)
