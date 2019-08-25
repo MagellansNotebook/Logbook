@@ -5,6 +5,7 @@ from peewee import *
 import cryptography.fernet
 import datetime
 import base64
+import keyboard
 import os
 import re
 
@@ -14,13 +15,13 @@ class Display():
 		pass
 	def createNewDply(serName, useName, pasWord, grpItem):
 		print("\n")
-		print("+{0:-^139}+".format(""))
-		print("|{0:^139}|".format("New Account"))
-		print("+{0:-^16}+{1:-^40}+{2:-^40}+{3:-^40}+".format("","","",""))
-		print("|{0:^16}|{1:^40}|{2:^40}|{3:^40}|".format("Service Name","User Name","Password","Group Item"))
-		print("+{0:-^16}+{1:-^40}+{2:-^40}+{3:-^40}+".format("","","",""))
-		print("|{0:^16}|{1:^40}|{2:^40}|{3:^40}|".format(serName, useName, pasWord, grpItem))
-		print("+{0:-^16}+{1:-^40}+{2:-^40}+{3:-^40}+".format("","","",""))
+		print("+{0:-^118}+".format(""))
+		print("|{0:^118}|".format("New Account"))
+		print("+{0:-^16}+{1:-^40}+{2:-^40}+{3:-^19}+".format("","","",""))
+		print("|{0:^16}|{1:^40}|{2:^40}|{3:^19}|".format("Service Name","User Name","Password","Group Item"))
+		print("+{0:-^16}+{1:-^40}+{2:-^40}+{3:-^19}+".format("","","",""))
+		print("|{0:^16}|{1:^40}|{2:^40}|{3:^19}|".format(serName, useName, pasWord, grpItem))
+		print("+{0:-^16}+{1:-^40}+{2:-^40}+{3:-^19}+".format("","","",""))
 	def displayAccounts():
 		print("\n")
 		print("+{0:-^124}+".format(""))
@@ -43,19 +44,20 @@ def enc(pasWord):
 	while True:
 		try:
 			pasEncrypt = str(input("\nEnter a secret word to encrypt the password: "))
+			keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 			if pasEncrypt:
 				hashKey = argon2.using(rounds=100).hash(pasEncrypt)
 				# key encryption process
 				hashKeyParam = re.split("[, $]", hashKey)
 				passValue = (pasEncrypt+hashKeyParam[6][:-6]).zfill(32)
-				del pasEncrypt
-				del hashKeyParam
+				del pasEncrypt #--------------> Removes the refernce object from the script 
+				del hashKeyParam #--------------> Removes the refernce object from the script
 				encodeHash = base64.urlsafe_b64encode(passValue.encode('utf-8'))
-				del passValue
+				del passValue #--------------> Removes the refernce object from the script
 				encVal = cryptography.fernet.Fernet(encodeHash)
 				# result of encryption
 				password = encVal.encrypt(pasWord.encode('utf-8'))
-				del encVal
+				del encVal #--------------> Removes the refernce object from the script
 				print("[MESSAGE] Password succesfully encrypted. Press [ENTER KEY] to continue...")
 				return hashKey, password
 			else:
@@ -71,6 +73,7 @@ def enc(pasWord):
 def denc(Id):
 	"""Decrypt password using secret word"""
 	try:
+		keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 		query = database.select(Id)
 		for entry in query:
 			hashKeyParam = re.split("[, $]", entry.hashKey)
@@ -83,8 +86,10 @@ def denc(Id):
 			print("Date Time Group: ",str(entry.dtg))
 		while True:
 			selection = str(input("\nDo you wish to decrypt password?\nPress [Y] to continue [N] to go back to main menu: "))
+			keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 			if selection == "y":
 				pasEncrypt = str(input("\nEnter the secret word to decrypt the password: "))
+				keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 				if pasEncrypt:
 					for entry in query:
 						# key encryption process
@@ -92,16 +97,16 @@ def denc(Id):
 						if result == True:
 							hashKeyParam = re.split("[, $]", entry.hashKey)
 							passValue = (pasEncrypt+hashKeyParam[6][:-6]).zfill(32)
-							del hashKeyParam
-							del pasEncrypt
+							del hashKeyParam #--------------> Removes the refernce object from the script
+							del pasEncrypt #--------------> Removes the refernce object from the script
 							encodeHash = base64.urlsafe_b64encode(passValue.encode('utf-8'))
-							del passValue
+							del passValue #--------------> Removes the refernce object from the script
 							encVal = cryptography.fernet.Fernet(encodeHash)
 							# result of encryption
 							password = encVal.decrypt(entry.password)
-							del encVal
+							del encVal #--------------> Removes the refernce object from the script
 							print("\nDecrypted Password: ", str(password)[2:-1])
-							del password
+							del password #--------------> Removes the refernce object from the script
 						elif result == False:
 							print("[MESSAGE] Incorrect Password!. Press [ENTER KEY] and try again.")
 					break
@@ -127,20 +132,25 @@ def createNewAcc():
 	"""Create New Account"""
 	Display.displayTitle(createNewAcc.__doc__)
 	serName = str(input("\nService Name: "))
+	keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 	useName = str(input("User Name: "))
+	keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 	pasWord = str(input("Password: "))
+	keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 	grpItem = str(input("Group Item: "))
+	keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 	if serName and useName and pasWord and grpItem:
 		Display.createNewDply(serName,useName,pasWord,grpItem)
 		while True:
 			try:
 				selection = str(input("\nDo you wish to continue?\nPress [Y] to save the entry into the database and [N] to discard entry: ").lower())
+				keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 				if selection == "y":
 					hashKey,password = enc(pasWord)
 					database.insert(serName,useName,password,hashKey,grpItem)
-					del pasWord
-					del hashKey
-					del password
+					del pasWord #--------------> Removes the refernce object from the script
+					del hashKey #--------------> Removes the refernce object from the script
+					del password #--------------> Removes the refernce object from the script
 					print("[MESSAGE] Account Created. Press [ENTER KEY] to continue...")
 					break
 				elif selection == "n":
@@ -167,10 +177,12 @@ def displayAcc():
 		print("+{0:-^20}+{1:-^10}+{2:-^40}+{3:-^20}+{4:-^30}+".format("","","","",""))
 		while True:
 			option = str(input("\nDo you wish to view more details on an account?\nPress [Y] to continue or [N] to go back to main menu: ").lower())
+			keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 			if option == "y":
 				selection = str(input("\nEnter the Account Serial to view more detials: "))
 				Display.displayTitle("Account Details")
 				denc(selection)
+				keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 				break
 			elif option == "n":
 				cls()
@@ -188,9 +200,11 @@ def updateKey():
 	print("+{0:-^20}+{1:-^10}+{2:-^40}+{3:-^20}+{4:-^30}+".format("","","","",""))
 	while True:
 		option = str(input("\nDo you wish to edit an account.\nPress [Y] to continue or [N] to go back to main menu: ").lower())
+		keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 		if option == "y":
 			Id = str(input("\nEnter the Account Serial to view more detials: "))
 			query = database.select(Id)
+			keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 			for entry in query:
 				hashKeyParam = re.split("[, $]", entry.hashKey)
 				print("\nSerial: ",entry.id)
@@ -202,15 +216,17 @@ def updateKey():
 				print("Date Time Group: ",str(entry.dtg))
 			pasEncrypt = str(input("\nEnter the secret word to update the password: "))
 			result = argon2.verify(pasEncrypt,entry.hashKey)
+			keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 			if result == True:
 				print("[MESSAGE] Password verified.")
 				pasWord = str(input("\nEnter the new password for the account: "))
 				hashKey,password = enc(pasWord)
 				database.update(hashKey,password,Id)
-				del pasWord
-				del hashKey
-				del password
+				del pasWord #--------------> Removes the refernce object from the script
+				del hashKey #--------------> Removes the refernce object from the script
+				del password #--------------> Removes the refernce object from the script
 				print("[MESSAGE] Account Updated. Press [ENTER KEY] to continue...")
+				keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 			elif result == False:
 				print("[ERROR] Incorrect Password. Please try again.")
 			break
@@ -234,6 +250,7 @@ def deleteAcc():
 			selection = str(input("\nEnter the Account Serial to view more detials: "))
 			database.delete(selection)
 			print("[MESSAGE] Account number {} deleted. Press [ENTER KEY] to continue...".format(entry.id))
+			keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 			break
 		elif option == "n":
 			cls()
@@ -251,10 +268,12 @@ def menu_loop():
 	selection = None
 	while selection != 0:
 		try:
+			keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 			Display.displayTitle(menu_loop.__doc__)
 			for key, value in menu.items():
 				print('[%s] %s' %(key,value.__doc__))
 			selection = int(input('\nChoose a number from the menu: '))
+			keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 			if selection in menu:
 				menu[selection]()
 		except ValueError:
