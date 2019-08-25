@@ -14,6 +14,7 @@ class Display():
 	def __init__(self):
 		pass
 	def createNewDply(serName, useName, pasWord, grpItem):
+		cls()
 		print("\n")
 		print("+{0:-^118}+".format(""))
 		print("|{0:^118}|".format("New Account"))
@@ -23,6 +24,7 @@ class Display():
 		print("|{0:^16}|{1:^40}|{2:^40}|{3:^19}|".format(serName, useName, pasWord, grpItem))
 		print("+{0:-^16}+{1:-^40}+{2:-^40}+{3:-^19}+".format("","","",""))
 	def displayAccounts():
+		cls()
 		print("\n")
 		print("+{0:-^124}+".format(""))
 		print("|{0:^124}|".format("Display Accounts"))
@@ -58,16 +60,19 @@ def enc(pasWord):
 				# result of encryption
 				password = encVal.encrypt(pasWord.encode('utf-8'))
 				del encVal #--------------> Removes the refernce object from the script
-				print("[MESSAGE] Password succesfully encrypted. Press [ENTER KEY] to continue...")
+				cls()
+				print("[MESSAGE] Password succesfully encrypted")
 				return hashKey, password
 			else:
-				print("[ERROR] Please enter a password. Press [ENTER KEY] to continue...")
+				print("[ERROR] Please enter a password")
 				continue
 		except ValueError:
-			print("[ERROR] The password must be less than 16 characters long. Press [ENTER KEY] to continue...")
+			cls()
+			print("[ERROR] The password must be less than 16 characters long")
 			break
 		except EOFError:
-			print("[ERROR] Invalid Entry. Press [ENTER KEY] to continue...")
+			cls()
+			print("[ERROR] Invalid Entry")
 			break
 
 def denc(Id):
@@ -105,10 +110,12 @@ def denc(Id):
 							# result of encryption
 							password = encVal.decrypt(entry.password)
 							del encVal #--------------> Removes the refernce object from the script
+							cls()
 							print("\nDecrypted Password: ", str(password)[2:-1])
 							del password #--------------> Removes the refernce object from the script
 						elif result == False:
-							print("[MESSAGE] Incorrect Password!. Press [ENTER KEY] and try again.")
+							cls()
+							print("[ERROR] Incorrect Password. Please try again.")
 					break
 				else:
 					print("[ERROR] Please enter a password and try again.")
@@ -117,15 +124,18 @@ def denc(Id):
 				cls()
 				break
 			else:
-				print("[ERROR] Incorrect selection. Please select [Y] or [N]. Press [ENTER KEY] to continue...")
+				print("[ERROR] Incorrect selection. Please select [Y] or [N].")
 				continue
 	except EOFError:
-		print("[ERROR] Invalid Entry. Press [ENTER KEY] to continue...")
+		cls()
+		print("[ERROR] Invalid Entry.")
 	except:
-		print("[ERROR] Invalid Entry. Press [ENTER KEY] to continue...")
+		cls()
+		print("[ERROR] Invalid Entry.")
 
 def exitFunc():
 	"""Exit Program"""
+	cls()
 	exit()
 
 def createNewAcc():
@@ -151,25 +161,28 @@ def createNewAcc():
 					del pasWord #--------------> Removes the refernce object from the script
 					del hashKey #--------------> Removes the refernce object from the script
 					del password #--------------> Removes the refernce object from the script
-					print("[MESSAGE] Account Created. Press [ENTER KEY] to continue...")
+					print("[MESSAGE] Account Created.")
 					break
 				elif selection == "n":
-					print("[MESSAGE] Account Cancelled. Press [ENTER KEY] to continue...")
+					cls()
+					print("[MESSAGE] Account Cancelled.")
 					break
 				else:
-					print("[ERROR] Incorrect selection. Please select [Y]es or [N]o. Press [ENTER KEY] to continue...")
+					print("[ERROR] Incorrect selection. Please select [Y]es or [N]o.")
 					continue
 			except EOFError:
-				print("[ERROR] Invalid Entry. Press [ENTER KEY] to continue...")
+				cls()
+				print("[ERROR] Invalid Entry.")
 				break
 	else:
-		print("[ERROR] Missing data. Please fill all detials required. Press [ENTER KEY] to continue...")
+		cls()
+		print("[ERROR] Missing data. Please fill all detials required.")
 
 def displayAcc():
 	"""View Accounts"""
 	query = database.view()
 	if not query:
-		print("\n[MESSAGE] No accounts in the database. Press [ENTER KEY] to continue...")
+		print("\n[MESSAGE] No accounts in the database.")
 	else:
 		Display.displayAccounts()
 		for entry in query:
@@ -180,6 +193,7 @@ def displayAcc():
 			keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 			if option == "y":
 				selection = str(input("\nEnter the Account Serial to view more detials: "))
+				cls()
 				Display.displayTitle("Account Details")
 				denc(selection)
 				keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
@@ -188,7 +202,7 @@ def displayAcc():
 				cls()
 				break
 			else:
-				print("[ERROR] Incorrect selection. Please select [Y]es or [N]o. Press [ENTER KEY] to continue...")
+				print("[ERROR] Incorrect selection. Please select [Y]es or [N]o.")
 				continue
 
 def updateKey():
@@ -203,6 +217,8 @@ def updateKey():
 		keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 		if option == "y":
 			Id = str(input("\nEnter the Account Serial to view more detials: "))
+			cls()
+			Display.displayTitle("Edit Account")
 			query = database.select(Id)
 			keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 			for entry in query:
@@ -215,26 +231,32 @@ def updateKey():
 				print("Hashkey: ",hashKeyParam[6]+hashKeyParam[7])
 				print("Date Time Group: ",str(entry.dtg))
 			pasEncrypt = str(input("\nEnter the secret word to update the password: "))
-			result = argon2.verify(pasEncrypt,entry.hashKey)
-			keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
-			if result == True:
-				print("[MESSAGE] Password verified.")
-				pasWord = str(input("\nEnter the new password for the account: "))
-				hashKey,password = enc(pasWord)
-				database.update(hashKey,password,Id)
-				del pasWord #--------------> Removes the refernce object from the script
-				del hashKey #--------------> Removes the refernce object from the script
-				del password #--------------> Removes the refernce object from the script
-				print("[MESSAGE] Account Updated. Press [ENTER KEY] to continue...")
+			if pasEncrypt:
+				result = argon2.verify(pasEncrypt,entry.hashKey)
 				keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
-			elif result == False:
-				print("[ERROR] Incorrect Password. Please try again.")
-			break
+				if result == True:
+					print("[MESSAGE] Password verified.")
+					pasWord = str(input("\nEnter the new password for the account: "))
+					hashKey,password = enc(pasWord)
+					database.update(hashKey,password,Id)
+					del pasWord #--------------> Removes the refernce object from the script
+					del hashKey #--------------> Removes the refernce object from the script
+					del password #--------------> Removes the refernce object from the script
+					print("[MESSAGE] Account Updated.")
+					keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
+				elif result == False:
+					cls()
+					print("[ERROR] Incorrect Password. Please try again.")
+				break
+			else:
+				cls()
+				print("[ERROR] Invalid Entry.")
+				break
 		elif option == "n":
 			cls()
 			break
 		else:
-			print("[ERROR] Incorrect selection. Please select [Y]es or [N]o. Press [ENTER KEY] to continue...")
+			print("[ERROR] Incorrect selection. Please select [Y]es or [N]o.")
 			continue
 
 def deleteAcc():
@@ -247,16 +269,17 @@ def deleteAcc():
 	while True:
 		option = str(input("\nDo you wish to delete an account? [Y] to continue or [N] to go back to the main menu: ").lower())
 		if option == "y":
-			selection = str(input("\nEnter the Account Serial to view more detials: "))
+			selection = str(input("\nEnter the Account Serial to be deleted: "))
 			database.delete(selection)
-			print("[MESSAGE] Account number {} deleted. Press [ENTER KEY] to continue...".format(entry.id))
+			cls()
+			print("[MESSAGE] Account number {} deleted.".format(selection))
 			keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
 			break
 		elif option == "n":
 			cls()
 			break
 		else:
-			print("[ERROR] Incorrect selection. Please select [Y]es or [N]o. Press [ENTER KEY] to continue...")
+			print("[ERROR] Incorrect selection. Please select [Y]es or [N]o.")
 			continue
 
 def refresh():
@@ -277,9 +300,11 @@ def menu_loop():
 			if selection in menu:
 				menu[selection]()
 		except ValueError:
+			cls()
 			print("\n[Error] Invalid entry")
 			continue
 		except EOFError:
+			cls()
 			print("\n[Error] Invalid entry")
 			continue
 
