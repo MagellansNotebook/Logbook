@@ -147,6 +147,7 @@ def exitFunc():
 
 def createNewAcc():
 	"""Create New Account"""
+	cls()
 	Display.displayTitle(createNewAcc.__doc__)
 	serName = str(input("\nService Name: "))
 	keyboard.press_and_release('alt+f7') #--------------> Clears the command line history
