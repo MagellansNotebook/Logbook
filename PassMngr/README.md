@@ -53,3 +53,9 @@ Simply select Y if you wish to view more details and enter the serial number tha
 
 The key details of the account will be displayed on this menu. However, the password of the account is encrypted. To decrypt the password simply Select Y to continue. It will prompt you to enter the secret word used to decrypt the account password.
 
+![decrypt](https://user-images.githubusercontent.com/51066040/64089069-ab50f780-cd87-11e9-9f06-377666c6915e.png
+
+If the secret word is correct, the decrypted password will be displayed on top of the main menu. Else, an error will occur.
+
+
+
