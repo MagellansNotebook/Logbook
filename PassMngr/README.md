@@ -53,9 +53,13 @@ Simply select Y if you wish to view more details and enter the serial number tha
 
 The key details of the account will be displayed on this menu. However, the password of the account is encrypted. To decrypt the password simply Select Y to continue. It will prompt you to enter the secret word used to decrypt the account password.
 
-![decrypt](https://user-images.githubusercontent.com/51066040/64089069-ab50f780-cd87-11e9-9f06-377666c6915e.png
+![decrypt](https://user-images.githubusercontent.com/51066040/64089130-fb2fbe80-cd87-11e9-93cf-d55de502ec1b.png)
 
 If the secret word is correct, the decrypted password will be displayed on top of the main menu. Else, an error will occur.
 
+**[ 3 ] Update Key**
 
+Press 3 to update key.
+
+Update key will update the password of the account and secret word. Simply, select Y to change and assign new password and secret word to the account.
 
