@@ -35,6 +35,21 @@ If all details are correct simply press enter. It will display all the input you
 
 If you select Y then it will prompt you to enter another set of password which will be used to encrypt the password used to login into your account. 
 
+Note: You can use the same password for encryption. However, if the secret word is compramise then it can decrypt all account passwords assigned to it. 
+
 Once the process is complete, you will go back to the main menu. A remark on top of the menu will appear. 
 
 ![successful_create_new_account](https://user-images.githubusercontent.com/51066040/64085870-76897400-cd78-11e9-89cb-15033d229361.png)
+
+**[ 2 ] View Accounts**
+
+Press 2 to view all accounts saved in the database.
+
+![display_account](https://user-images.githubusercontent.com/51066040/64086695-0c270280-cd7d-11e9-91d1-bed8079189ac.png)
+
+Simply select Y if you wish to view more details and enter the serial number that corresponds to the account.
+
+![account_details](https://user-images.githubusercontent.com/51066040/64086807-97a09380-cd7d-11e9-8463-67fda32e21ec.png)
+
+The key details of the account will be displayed on this menu. However, the password of the account is encrypted. To decrypt the password simply Select Y to continue. It will prompt you to enter the secret word used to decrypt the account password.
+
