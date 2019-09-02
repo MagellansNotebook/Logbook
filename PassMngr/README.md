@@ -63,6 +63,7 @@ If the secret word is correct, the decrypted password will be displayed on top o
 
 Press 3 to update key.
 
-Update key will update the password of the account and secret word. Simply, select Y to change and assign new password and secret word to the account.
+Update key will update the password of the account and secret word. Like View Account, select Y and enter the serial number of the account to be updated.
 
-![update_key](https://user-images.githubusercontent.com/51066040/64089640-5662b080-cd8a-11e9-8b3e-2daf1f3109a5.png)
+![update_key](https://user-images.githubusercontent.com/51066040/64089715-db4dca00-cd8a-11e9-8898-82e5fb48b364.png)
+
