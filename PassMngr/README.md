@@ -7,11 +7,11 @@
 
 To navigate, press the corressponding number of the menu name.
 
-**[0] Exit**
+**[ 0 ] Exit**
 
 Press zero to exit the application.
 
-**[1] Create New Account**
+**[ 1 ] Create New Account**
 
 Press 1 to create a new account.
 
@@ -23,4 +23,11 @@ Press 1 to create a new account.
 
 **Password** - is the secret word used to verify the username againts the password assigned to it.
 
-**Group Item** - is a type of account. It is defined by the user how he/she wants to identify it. (ie Email, for example@yahoo.com.au, Account Login, facebook.com)
+**Group Item** - is a type of account. It is defined by the user how he/she wants to identify it. (ie Email, for example@yahoo.com.au, Account Login, for facebook.com)
+
+Press enter key once the details are complete.
+
+Note: If you made an error simply press enter and dont add any details on the following prompts. This will force an error to occur which will take you back to the main menu.
+
+If all details are correct simply press enter. It will display all the input you have entered so you can verify if it is correct. Select Y if you wish to store the account in the database. Else, select N to go back to the main menu.
+
