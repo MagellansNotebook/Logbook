@@ -12,5 +12,6 @@ To navigate, press the corressponding number of the menu name.
 Press zero to exit the application.
 
 **Create New Account**
+
 Press 1 to create a new account.
 
