@@ -34,3 +34,9 @@ If all details are correct simply press enter. It will display all the input you
 ![encryption](https://user-images.githubusercontent.com/51066040/64085581-05958c80-cd77-11e9-8b45-bad99d72dd46.png)
 
 If you select Y then it will prompt you to enter another set of password which will be used to encrypt the password used to login into your account. 
+
+![successful_create_new_account](https://user-images.githubusercontent.com/51066040/64085870-76897400-cd78-11e9-89cb-15033d229361.png)
+
+Once the process is complete, you will go back to the main menu. A remark on top of the menu will appear. 
+
+![successful_create_new_account](https://user-images.githubusercontent.com/51066040/64085870-76897400-cd78-11e9-89cb-15033d229361.png)
