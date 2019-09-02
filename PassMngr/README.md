@@ -19,27 +19,23 @@ The Create New Account menu set-up a new entry into the Peewee database. The fol
 
 Below is a basic example of the naming conventions used when entering a new account into the database:
 
-* **Service Name** - the name of the host. 
-Example: Github, Yahoo, Google, and Facebook accounts.
+* **Service Name** - the name of the host. Example: Github, Yahoo, Google, and Facebook accounts.
 
 * **Username** - the username used to login into an account. Typically, the username uses the email address. However, some accounts may have a different set of rules. 
 
 * **Password** - the password used to acccess the username account.
 
-* **Group Item** - is a type of account. 
-Example: Email, for example@yahoo.com.au, Account Login, for facebook.com
+* **Group Item** - type of account. Example: Email, for example@yahoo.com.au; Account Login, for facebook.com
 
-Press enter key once the details are complete.
-
-Note: If you made an error simply press enter and dont add any details on the following prompts. This will force an error to occur which will take you back to the main menu.
-
-If all details are correct simply press enter. It will display all the input you have entered so you can verify if it is correct. Select Y if you wish to store the account in the database. Else, select N to go back to the main menu.
+Note: If you made an error simply, press enter and dont add any details on the following prompts. This will force an error to occur which will take you back to the main menu.
 
 ![encryption](https://user-images.githubusercontent.com/51066040/64085581-05958c80-cd77-11e9-8b45-bad99d72dd46.png)
 
-If you select Y then it will prompt you to enter another set of password which will be used to encrypt the password used to login into your account. 
+Once, all of the required details entered for the account, the above image will appear. The image confirms the information to be verified by the operator.
 
-Note: You can use the same password for encryption. However, if the secret word is compramise then it can decrypt all account passwords assigned to it. 
+By press the Y/y key, the application will prompt the user to enter a secret word to encrypt the Password for the Account.
+
+Note: The secret word used to encrypt the password of the account must be a maximum of 16 characters long. Also, the same secret word can be used on multiple passwords. However, it is not ideal for security. Because, if the secret word is compromised then all password encryted by the secret word will be unlock. So, ensure to use a strong secret word when using it in multiple encryption.
 
 Note: the secret key is case sensitive.
 
