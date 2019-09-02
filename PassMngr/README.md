@@ -37,6 +37,8 @@ If you select Y then it will prompt you to enter another set of password which w
 
 Note: You can use the same password for encryption. However, if the secret word is compramise then it can decrypt all account passwords assigned to it. 
 
+Note: the secret key is case sensitive.
+
 Once the process is complete, you will go back to the main menu. A remark on top of the menu will appear. 
 
 ![successful_create_new_account](https://user-images.githubusercontent.com/51066040/64085870-76897400-cd78-11e9-89cb-15033d229361.png)
@@ -63,3 +65,4 @@ Press 3 to update key.
 
 Update key will update the password of the account and secret word. Simply, select Y to change and assign new password and secret word to the account.
 
+![update_key](https://user-images.githubusercontent.com/51066040/64089640-5662b080-cd8a-11e9-8b3e-2daf1f3109a5.png)
