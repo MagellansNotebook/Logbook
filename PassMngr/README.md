@@ -31,3 +31,6 @@ Note: If you made an error simply press enter and dont add any details on the fo
 
 If all details are correct simply press enter. It will display all the input you have entered so you can verify if it is correct. Select Y if you wish to store the account in the database. Else, select N to go back to the main menu.
 
+![encryption](https://user-images.githubusercontent.com/51066040/64085581-05958c80-cd77-11e9-8b45-bad99d72dd46.png)
+
+If you select Y then it will prompt you to enter another set of password which will be used to encrypt the password used to login into your account. 
