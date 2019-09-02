@@ -70,3 +70,15 @@ Update key will update the password of the account and secret word. Like View Ac
 Once, an account has been selected for update it will display the information of the account. You will be prompted to enter the original secret key to make changes. Follow the prompt to apply the new password. 
 
 ![edit_account](https://user-images.githubusercontent.com/51066040/64090474-aa6f9400-cd8e-11e9-8a46-2e98fbafdd77.png)
+
+A successful message will appear on top of the main menu once the process is complete.
+
+**[ 4 ] Delete Account**
+
+Press 4 to delete account.
+
+![delete](https://user-images.githubusercontent.com/51066040/64092091-9d56a300-cd96-11e9-88d1-c31c557b812a.png)
+
+The delete menu is straightforward. Select Y and enter the serial number of the the account you wish to remove from the database. 
+
+Note: It will not ask you to verify to a password to delete the account. So, be carefull when deleting an account because it cannot be undone once deleted.
