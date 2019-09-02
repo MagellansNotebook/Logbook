@@ -17,13 +17,17 @@ The Exit menu simply closes the application.
 
 The Create New Account menu set-up a new entry into the Peewee database. The following details like Service Name, Username, Password, Group Item must be filled in order to save it into the database. If any of the details is blank then an error will occur. The information entered into the database is dependent on the user. 
 
-**Service Name** -  is the name of the host ie Github, Yahoo, Google, and Facebook accounts.
+Below is a basic example of the naming conventions used when entering a new account into the database:
 
-**Username** - is the username used to login into an account. Typically, the username uses the email address. However, some accounts may have a different set of rules. 
+* **Service Name** - the name of the host. 
+Example: Github, Yahoo, Google, and Facebook accounts.
 
-**Password** - is the secret word used to verify the username againts the password assigned to it.
+* **Username** - the username used to login into an account. Typically, the username uses the email address. However, some accounts may have a different set of rules. 
 
-**Group Item** - is a type of account. It is defined by the user how he/she wants to identify it. (ie Email, for example@yahoo.com.au, Account Login, for facebook.com)
+* **Password** - the password used to acccess the username account.
+
+* **Group Item** - is a type of account. 
+Example: Email, for example@yahoo.com.au, Account Login, for facebook.com
 
 Press enter key once the details are complete.
 
