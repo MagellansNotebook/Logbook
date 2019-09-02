@@ -1,21 +1,21 @@
 # PassMngr
 ![main_menu](https://user-images.githubusercontent.com/51066040/64084137-8babd600-cd6b-11e9-8113-a1c3c0e4b2d1.png)
 
-**PassMngr** is a simple vault which stores and encrypts plain text passwords use to login into any personnal or business accounts. The application uses Argon2 and Cryptography libraries for encryption and Peewee for database storage.
+**PassMngr** is a simple password vault application. The program stores and encrypts plain text passwords use to login into any personnal or business accounts. It uses Argon2 and Cryptography libraries for encryption and Peewee for database storage. PassMngr runs a basic Command Line display with simplified selection for operations.
 
 **Menu**
 
-To navigate, press the corressponding number of the menu name.
+Each tile has a number corresponding to it. To navigate, press the number to run the option.
 
 **[ 0 ] Exit**
 
-Press zero to exit the application.
+The Exit menu simply closes the application.
 
 **[ 1 ] Create New Account**
 
-Press 1 to create a new account.
-
 ![create_new_account](https://user-images.githubusercontent.com/51066040/64084313-9bc4b500-cd6d-11e9-808d-91d4d8aec1da.png)
+
+The Create New Account menu set-up a new entry into the Peewee database. The following details like Service Name, Username, Password, Group Item must be filled in order to save it into the database. If any of the details is blank then an error will occur. The information entered into the database is dependent on the user. 
 
 **Service Name** -  is the name of the host ie Github, Yahoo, Google, and Facebook accounts.
 
@@ -81,4 +81,11 @@ Press 4 to delete account.
 
 The delete menu is straightforward. Select Y and enter the serial number of the the account you wish to remove from the database. 
 
-Note: It will not ask you to verify to a password to delete the account. So, be carefull when deleting an account because it cannot be undone once deleted.
+Note: It will not ask you to verify a password before deleting the account. So, be carefull when choosing delete because it cannot be undone once deleted.
+
+**[ 5 ] Refresh Command Prompt**
+
+Press 5 to refresh page.
+
+This option simply refreshes the page and removes any excess entries and leaves only the menu page open.
+
