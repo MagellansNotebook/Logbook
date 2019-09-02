@@ -63,7 +63,10 @@ If the secret word is correct, the decrypted password will be displayed on top o
 
 Press 3 to update key.
 
-Update key will update the password of the account and secret word. Like View Account, select Y and enter the serial number of the account to be updated.
-
 ![update_key](https://user-images.githubusercontent.com/51066040/64089715-db4dca00-cd8a-11e9-8898-82e5fb48b364.png)
 
+Update key will update the password of the account and secret word. Like View Account, select Y and enter the serial number of the account to be updated.
+
+Once, an account has been selected for update it will display the information of the account. You will be prompted to enter the original secret key to make changes. Follow the prompt to apply the new password. 
+
+![edit_account](https://user-images.githubusercontent.com/51066040/64090474-aa6f9400-cd8e-11e9-8a46-2e98fbafdd77.png)
