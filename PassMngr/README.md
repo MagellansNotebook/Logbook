@@ -59,27 +59,23 @@ The View Accounts options displays all accounts saved in the database. It also i
 
 ![account_details](https://user-images.githubusercontent.com/51066040/64086807-97a09380-cd7d-11e9-8463-67fda32e21ec.png)
 
-Selecting Y/y displays more details about the account. The password will be displayed but it will be hashed. Also, the hash key is displayed.
+Selecting Y/y and the serial number correspoding the account displays more information. The password will be displayed but it will be hashed. Also, the hash key is displayed.
 
 ![decrypt](https://user-images.githubusercontent.com/51066040/64089130-fb2fbe80-cd87-11e9-93cf-d55de502ec1b.png)
 
-Entering the secret word will decrypt the password and it will be diplayed on top of the main menu.
+Entering the correct secret word will decrypt the password and it will be diplayed on top of the main menu.
 
 **[ 3 ] Update Key**
 
 ![update_key](https://user-images.githubusercontent.com/51066040/64089715-db4dca00-cd8a-11e9-8898-82e5fb48b364.png)
 
-Update key will update the password of the account and secret word. Like View Account, select Y and enter the serial number of the account to be updated.
-
-Once, an account has been selected for update it will display the information of the account. You will be prompted to enter the original secret key to make changes. Follow the prompt to apply the new password. 
+The Update Key edits the password of the account and secret word used to encrypt its password. Similar to View accounts, select Y/y and enter the serial number of the account. The user will be prompted to enter the secret word used for the account for verification.
 
 ![edit_account](https://user-images.githubusercontent.com/51066040/64090474-aa6f9400-cd8e-11e9-8a46-2e98fbafdd77.png)
 
-A successful message will appear on top of the main menu once the process is complete.
+Once, the secret key is verified a new message will appear below it. Simply, follow the prompt to edit/change the password followed by the secret word for encryption/decryption.
 
 **[ 4 ] Delete Account**
-
-Press 4 to delete account.
 
 ![delete](https://user-images.githubusercontent.com/51066040/64092091-9d56a300-cd96-11e9-88d1-c31c557b812a.png)
 
