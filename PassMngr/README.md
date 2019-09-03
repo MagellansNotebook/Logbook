@@ -85,7 +85,4 @@ Note: It will not ask the user to verify a secret word before deleting the accou
 
 **[ 5 ] Refresh Command Prompt**
 
-Press 5 to refresh page.
-
 This option simply refreshes the page and removes any excess entries and leaves only the menu page open.
-
