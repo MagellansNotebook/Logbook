@@ -35,7 +35,7 @@ The image above will appear as long as all information requested by the applicat
 
 By press the Y/y key, the application will prompt the user to enter a secret word to encrypt the password for the account.
 
-Note: The secret word must be a maximum of 16 characters long. The same secret word can be used on multiple passwords. However, it is not ideal for security. Because, if the secret word is compromised then all password encryted by the secret word will be unlock. So, ensure to use a strong secret word when using it in multiple encryption. Also, the secret key is case sensitive.
+Note: The secret word must be a maximum of 16 characters long. The same secret word can be used on multiple passwords. However, it is not ideal for security. Because, if the secret word is compromised then all password encryted by the secret word will be unlock. So, ensure to use a strong secret word when using it in multiple encryption. 
 
 ![successful_create_new_account](https://user-images.githubusercontent.com/51066040/64085870-76897400-cd78-11e9-89cb-15033d229361.png)
 
@@ -60,6 +60,8 @@ The View Accounts options displays all accounts saved in the database. It also i
 ![account_details](https://user-images.githubusercontent.com/51066040/64086807-97a09380-cd7d-11e9-8463-67fda32e21ec.png)
 
 Selecting Y/y and the serial number correspoding the account displays more information. The password will be displayed but it will be hashed. Also, the hash key is displayed.
+
+Note: The secret key is case sensitive.
 
 ![decrypt](https://user-images.githubusercontent.com/51066040/64089130-fb2fbe80-cd87-11e9-93cf-d55de502ec1b.png)
 
