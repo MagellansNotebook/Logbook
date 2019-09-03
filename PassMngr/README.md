@@ -21,47 +21,51 @@ Below is a basic example of the naming conventions used when entering a new acco
 
 * **Service Name** - the name of the host. Example: Github, Yahoo, Google, and Facebook accounts.
 
-* **Username** - the username used to login into an account. Typically, the username uses the email address. However, some accounts may have a different set of rules. 
+* **Username** - the username used to login into an account. Typically, the username uses the email address. However, some accounts may have a account rules. 
 
-* **Password** - the password used to acccess the username account.
+* **Password** - the password used to acccess the account.
 
 * **Group Item** - type of account. Example: Email, for example@yahoo.com.au; Account Login, for facebook.com
 
-Note: If you made an error simply, press enter and dont add any details on the following prompts. This will force an error to occur which will take you back to the main menu.
+Note: If the user made an error simply, press enter and dont add any details on it. This will force an error to occur which will take the user back to the main menu.
 
 ![encryption](https://user-images.githubusercontent.com/51066040/64085581-05958c80-cd77-11e9-8b45-bad99d72dd46.png)
 
-Once, all of the required details entered for the account, the above image will appear. The image confirms the information to be verified by the operator.
+The image above will appear as long as all information requested by the application is filled in. Also, the displayed data allows the user to confirm the input is correct.
 
-By press the Y/y key, the application will prompt the user to enter a secret word to encrypt the Password for the Account.
+By press the Y/y key, the application will prompt the user to enter a secret word to encrypt the password for the account.
 
-Note: The secret word used to encrypt the password of the account must be a maximum of 16 characters long. Also, the same secret word can be used on multiple passwords. However, it is not ideal for security. Because, if the secret word is compromised then all password encryted by the secret word will be unlock. So, ensure to use a strong secret word when using it in multiple encryption.
-
-Note: the secret key is case sensitive.
-
-Once the process is complete, you will go back to the main menu. A remark on top of the menu will appear. 
+Note: The secret word must be a maximum of 16 characters long. The same secret word can be used on multiple passwords. However, it is not ideal for security. Because, if the secret word is compromised then all password encryted by the secret word will be unlock. So, ensure to use a strong secret word when using it in multiple encryption. Also, the secret key is case sensitive.
 
 ![successful_create_new_account](https://user-images.githubusercontent.com/51066040/64085870-76897400-cd78-11e9-89cb-15033d229361.png)
 
-**[ 2 ] View Accounts**
+Once the process is complete a successful remark on top of the menu will appear. 
 
-Press 2 to view all accounts saved in the database.
+**[ 2 ] View Accounts**
 
 ![display_account](https://user-images.githubusercontent.com/51066040/64086695-0c270280-cd7d-11e9-91d1-bed8079189ac.png)
 
-Simply select Y if you wish to view more details and enter the serial number that corresponds to the account.
+The View Accounts options displays all accounts saved in the database. It also includes the following details:
+
+* **Service Name** - the actual host who provides services to the user.
+
+* **Serial Number** - the number assigned to the account. The number is incremeting and automatically assigned by the database.
+
+* **User Name** - it is the name used to access the account from the host services.
+
+* **Group Item** - is defined by the type of account.
+
+* **Date Time Group** - shows the time and date the account was created.
 
 ![account_details](https://user-images.githubusercontent.com/51066040/64086807-97a09380-cd7d-11e9-8463-67fda32e21ec.png)
 
-The key details of the account will be displayed on this menu. However, the password of the account is encrypted. To decrypt the password simply Select Y to continue. It will prompt you to enter the secret word used to decrypt the account password.
+Selecting Y/y displays more details about the account. The password will be displayed but it will be hashed. Also, the hash key is displayed.
 
 ![decrypt](https://user-images.githubusercontent.com/51066040/64089130-fb2fbe80-cd87-11e9-93cf-d55de502ec1b.png)
 
-If the secret word is correct, the decrypted password will be displayed on top of the main menu. Else, an error will occur.
+Entering the secret word will decrypt the password and it will be diplayed on top of the main menu.
 
 **[ 3 ] Update Key**
-
-Press 3 to update key.
 
 ![update_key](https://user-images.githubusercontent.com/51066040/64089715-db4dca00-cd8a-11e9-8898-82e5fb48b364.png)
 
