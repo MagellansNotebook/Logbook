@@ -79,9 +79,9 @@ Once, the secret key is verified a new message will appear below it. Simply, fol
 
 ![delete](https://user-images.githubusercontent.com/51066040/64092091-9d56a300-cd96-11e9-88d1-c31c557b812a.png)
 
-The delete menu is straightforward. Select Y and enter the serial number of the the account you wish to remove from the database. 
+The delete menu removes the account from the database. Directly, select Y/y and enter the serial number of the account the user wish to remove. 
 
-Note: It will not ask you to verify a password before deleting the account. So, be carefull when choosing delete because it cannot be undone once deleted.
+Note: It will not ask the user to verify a secret word before deleting the account. So, be carefull when choosing delete because it cannot be undone once deleted.
 
 **[ 5 ] Refresh Command Prompt**
 
